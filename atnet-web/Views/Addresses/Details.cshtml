@@ -1,0 +1,42 @@
+﻿@model atnet_web.Models.Address
+
+@{
+    ViewData["Title"] = "Detail adresy";
+}
+
+<h1>Detail adresy</h1>
+
+<div>
+    <h4>Adresa</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Street)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Street)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.City)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ZipCode)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ZipCode)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Editovat", "Edit", new { id = ViewData["id"] }) |
+    <a asp-action="Index">Zpět na seznam adres</a>
+</div>

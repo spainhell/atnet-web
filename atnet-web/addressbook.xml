@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <address>
+    <Name>C</Name>
+    <Street>C</Street>
+    <City>C</City>
+    <ZipCode>100 00</ZipCode>
+  </address>
+  <address>
+    <Name>D</Name>
+    <Street>D</Street>
+    <City>D</City>
+    <ZipCode>120 00</ZipCode>
+  </address>
+  <address>
+    <Name>X</Name>
+    <Street>Y</Street>
+    <City>Z</City>
+    <ZipCode>999 99</ZipCode>
+  </address>
+</root>

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<atnet_web.Models.Address>
+
+@{
+    ViewData["Title"] = "Adresář";
+}
+
+<h1>Adresář</h1>
+
+<p>
+    <a asp-action="Create">Nový záznam</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Jméno / název</th>
+            <th>Ulice</th>
+            <th>Město</th>
+            <th>PSČ</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Select((value, i) => new { i, value })) {
+        <tr>
+            <td>@item.value.Name</td>
+            <td>@item.value.Street</td>
+            <td>@item.value.City</td>
+            <td>@item.value.ZipCode</td>
+            <td>
+                @Html.ActionLink("Upravit", "Edit", new { id=item.i }) |
+                @Html.ActionLink("Detail", "Details", new { id=item.i }) |
+                @Html.ActionLink("Smazat", "Delete", new { id=item.i })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

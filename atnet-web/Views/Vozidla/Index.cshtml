@@ -1,0 +1,51 @@
+﻿@model atnet_web.Models.Vehicle
+
+@{
+    ViewData["Title"] = "Vozidla";
+}
+
+<h1>Výpočet stáří vozidla</h1>
+
+<h4>Vozidlo:</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Nazev" class="control-label"></label>
+                <input asp-for="Nazev" class="form-control" />
+                <span asp-validation-for="Nazev" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VinKod" class="control-label"></label>
+                <input asp-for="VinKod" class="form-control" />
+                <span asp-validation-for="VinKod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RokVyroby" class="control-label"></label>
+                <input asp-for="RokVyroby" class="form-control" />
+                <span asp-validation-for="RokVyroby" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PorizovaciCena" class="control-label"></label>
+                <input asp-for="PorizovaciCena" class="form-control" />
+                <span asp-validation-for="PorizovaciCena" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Spočítej" class="btn btn-primary" />
+            </div>
+        </form>
+        <p style="font-size: 1.6em">
+            Stáří vozidla: @Model.Stari
+        </p>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
